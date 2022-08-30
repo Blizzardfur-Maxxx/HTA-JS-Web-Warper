@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION ID="JSWaper" 
+   BORDER="bold" 
+   BORDERSTYLE="complex"/>
+<TITLE>JS Web Warper</TITLE>
+</HEAD>
+<script language="javascript">
+function installServer() {
+var objShell = new ActiveXObject("WScript.shell");
+objShell.run("npm install --global http-server");
+}
+function startServer() {
+var objShell = new ActiveXObject("WScript.shell");
+objShell.run("http-server");
+}
+function reloadApp() {
+location.reload();
+}
+function killServer() {
+var objShell = new ActiveXObject("WScript.shell");
+objShell.run("taskkill /f /im node.exe");
+}
+</script>
+<BODY>
+
+<H2>JS Web Warper</H2>
+<br>
+<H4>Html Aplication by : Maxxx#5509 
+<br>
+		<input type="button" style="height:50px;width:150px" value="Intsall LocalServer" onclick="installServer(this.value)"></input>   
+		<input type="button" style="height:50px;width:150px" value="Start Local Server" onclick="startServer(this.value)"></input>
+		<input type="button" style="height:50px;width:150px" value="Stop Local Server" onclick="killServer(this.value)"></input>
+		<input type="button" style="height:50px;width:150px" value="Refresh" onclick="reloadApp(this.value)"></input>
+
+<br>
+<object data="http://127.0.0.1:8080/index.html" width="800" height="800">
+    <embed src="http://127.0.0.1:8080/index.html" width="800" height="800"> </embed>
+    Error: Embedded data could not be displayed.
+
+</object>
+</BODY>
+</HTML>
+</HTML>
